@@ -29,6 +29,7 @@
   },
   "author": "andreas.eldh@gmail.com",
   "license": "MIT",
+  "repository": "https://github.com/eldh/fimp.git",
   "devDependencies": {
     "ava": "^0.17.0",
     "babel-cli": "^6.18.0",
