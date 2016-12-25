@@ -24,7 +24,7 @@ test('reduce', (t) => {
   t.is(sum(fromJS([1, 2, 3])), 6)
 })
 
-test.only('reduce with immutable', (t) => {
+test('reduce with immutable', (t) => {
   const state = fromJS({users: [{
     id: '1',
     name: 'Bengt',
@@ -59,18 +59,18 @@ test('map', (t) => {
 })
 
 test('compose and pass in data', (t) => {
-  t.is(compose(add5, filterEven, sum, fromJS([1, 2, 3])), 14)
+  t.is(compose(sum, filterEven, add5, fromJS([1, 2, 3])), 14)
 })
 
 test('curried compose of map, filter, reduce', (t) => {
-  const add5FilterEvenSum = compose(add5, filterEven, sum)
+  const add5FilterEvenSum = compose(sum, filterEven, add5)
   t.is(add5FilterEvenSum(fromJS([1, 2, 3])), 14)
 })
 
 const getInfo = get(['info'])
 const getAddress = get(['address'])
 const getStreet = get(['street'])
-const getAddressStreet = compose(getAddress, getStreet) // get(['address', 'street'])
+const getAddressStreet = compose(getStreet, getAddress) // get(['address', 'street'])
 const setStreet = set(['address', 'street'])
 const updatedUser = setStreet('Kungsgatan 5', user)
 
@@ -84,7 +84,7 @@ test('set', (t) => {
   t.is(updatedUser.getIn(['address', 'street']), 'Kungsgatan 5')
 })
 test('compose getter', (t) => {
-  t.is(getAddressStreet(user), 'Simborgargatan 12')
+  t.is('Simborgargatan 12', getAddressStreet(user))
 })
 test('identity of untouched', (t) => {
   t.true(getInfo(updatedUser) === getInfo(user))
