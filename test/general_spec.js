@@ -1,4 +1,4 @@
-import {fromJS, is} from 'immutable'
+import {Map, fromJS, is} from 'immutable'
 import {
   map, reduce, filter, flatten, find, some, get, set, compose,
   concat, contains, entrySeq, curry, every, keySeq, reverse,
@@ -22,6 +22,30 @@ const user = fromJS({
 const sum = reduce((total, a) => a + total, 0)
 test('reduce', (t) => {
   t.is(sum(fromJS([1, 2, 3])), 6)
+})
+
+test.only('reduce with immutable', (t) => {
+  const state = fromJS({users: [{
+    id: '1',
+    name: 'Bengt',
+  }, {
+    id: '2',
+    name: 'Bo',
+  }]})
+  const getUsersById = compose(
+    reduce((res, user) => set([get(['id'], user)], user, res), Map()),
+    get(['users'])
+  )
+  t.true(is(getUsersById(state), fromJS({
+    '1': {
+      id: '1',
+      name: 'Bengt',
+    },
+    '2': {
+      id: '2',
+      name: 'Bo',
+    },
+  })))
 })
 
 const filterEven = filter((a) => !(a % 2))
