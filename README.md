@@ -1,7 +1,7 @@
 # Fimp
 ## Functional Immutable Programming
 
-Fimp helps you work with [Immutable.js](https://facebook.github.io/immutable-js/) data structures in a more functional way. Think of it as [Ramda](http://ramdajs.com) or [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide) for Immutable.
+Fimp helps you work with [Immutable.js](https://facebook.github.io/immutable-js/) data structures in a more functional way. Think of it as [Ramda](http://ramdajs.com) or [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide) for Immutable. It's 525 bytes uglified and gzipped.
 
 ### Documentation
 Fimp provides composable, curried, data-last functions that work with immutable objects. If you are used to functional programming you are hopefully thinking "Nice, this makes sense, I can use this". If not, you might be thinking "Why would I want this?".
