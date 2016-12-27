@@ -15,7 +15,7 @@ The following functions are supported:
   const add5 = map((a) => a + 5)
   const filterEven = filter((a) => !(a % 2))
   const sum = reduce((total, a) => a + total, 0)
-  const addFilterAndSum = compose(add5, filterEven, sum)
+  const addFilterAndSum = compose(sum, filterEven, add5)
 
   addFilterAndSum(fromJS([1, 2, 3]) // 14
 ```
