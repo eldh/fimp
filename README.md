@@ -6,7 +6,7 @@ Fimp helps you work with [Immutable.js](https://facebook.github.io/immutable-js/
 ### Documentation
 Fimp provides composable, curried, data-last functions that work with immutable objects. If you are used to functional programming you are hopefully thinking "Nice, this makes sense, I can use this". If not, you might be thinking "Why would I want this?".
 
-The aim of Fimp is to help you write cleaner, more understandable code. Composable functions makes it easier to create more complex functions by combining smaller building blocks. (this article, explaining the rationale behind Ramda)[http://fr.umio.us/why-ramda/] applies to Fimp as well. The only difference is that Fimp is built for use with Immutable data structures, whereas Ramda is used with plain javascript object.
+The aim of Fimp is to help you write cleaner, more understandable code. Composable functions makes it easier to create more complex functions by combining smaller building blocks. [this article, explaining the rationale behind Ramda](http://fr.umio.us/why-ramda/) applies to Fimp as well. The only difference is that Fimp is built for use with Immutable data structures, whereas Ramda is used with plain javascript object.
 
 The following functions are supported:
 
